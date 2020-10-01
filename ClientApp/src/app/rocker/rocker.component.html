@@ -1,0 +1,27 @@
+<h1 id="tableLabel">Rockers</h1>
+
+<p *ngIf="!rockers"><em>...Loading</em></p>
+
+<table class="table table-striped" aria-labelledby="tableLabel" *ngIf="rockers">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Instrument</th>
+            <th>Still Alive?</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let s of rockers">
+            <td>{{s.FirstName}}</td>
+            <td>{{s.LastName}}</td>
+            <td>{{s.Instrument}}</td>
+            <td>{{s.IsAlive}}</td>
+        </tr>
+    </tbody>
+</table>
+First Name
+<input [(ngModel)]="newRocker.FirstName" name="FirstName"/>
+Last Name
+<input name="LastName" />
+<button [(ngModel)]="newRocker.FirstName" (click)="save()"></button>

@@ -12,6 +12,7 @@ export class TeacherComponent implements OnInit {
     constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string) {
 
     }
+    
     async ngOnInit() {
         this.teachers = await this.http.get<Teacher[]>(this.baseUrl + 'teacher').toPromise();
     }
