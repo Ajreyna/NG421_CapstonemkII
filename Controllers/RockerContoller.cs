@@ -28,5 +28,14 @@ namespace capstone.Controllers
             rockers = _context.Rockers.ToArray();
             return rockers;
         }
+
+        [HttpPost]
+        public Rocker Post([FromBody]Rocker rocker)
+        {
+            _context.Rockers.Add(rocker);
+             _context.SaveChanges();
+             return rocker;
+                        
+        }    
     }
 }
