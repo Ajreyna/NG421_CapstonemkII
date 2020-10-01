@@ -8,7 +8,7 @@ import {HttpClient} from '@angular/common/http';
 })
 export class RockerComponent implements OnInit {
   public rockers: Rocker[];
-  public newRocker: Rocker = { FirstName:'', LastName: '', Instrument: '', IsAlive: true };
+  public newRocker: Rocker = { firstName:'', lastName: '', instrument: '', isAlive: true };
 
   constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string) {
 
@@ -20,17 +20,16 @@ export class RockerComponent implements OnInit {
 
    async save() {
     await this.http.post<Rocker[]>(this.baseUrl + 'rocker', this.newRocker).toPromise();
-    this.newRocker = { FirstName: '', LastName:'', Instrument:'', IsAlive: true };
+    this.newRocker = { firstName: '', lastName:'', instrument:'', isAlive: true };
     this.rockers = await this.http.get<Rocker[]>(this.baseUrl + 'rocker').toPromise();
 }
 
   }
 interface Rocker{
-    FirstName: string;
-    LastName: string;
-    Instrument: string;
-    IsAlive: boolean;
-    
+    firstName: string;
+    lastName: string;
+    instrument: string;
+    isAlive: boolean;
   }
 
 //

@@ -38,7 +38,7 @@ import { RockerComponent } from './rocker/rocker.component';
         { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard] },
         { path: 'students', component: StudentsComponent, canActivate: [AuthorizeGuard] },
         { path: 'teachers', component: TeacherComponent, canActivate: [AuthorizeGuard] },
-        { path: 'rockers', component: RockerComponent, canActivate: [AuthorizeGuard] },
+        { path: 'rockers', component: RockerComponent },
         
     ])
   ],

@@ -13,15 +13,15 @@
     </thead>
     <tbody>
         <tr *ngFor="let s of rockers">
-            <td>{{s.FirstName}}</td>
-            <td>{{s.LastName}}</td>
-            <td>{{s.Instrument}}</td>
-            <td>{{s.IsAlive}}</td>
+            <td>{{s.firstName}}</td>
+            <td>{{s.lastName}}</td>
+            <td>{{s.instrument}}</td>
+            <td>{{s.isAlive}}</td>
         </tr>
     </tbody>
 </table>
 First Name
-<input [(ngModel)]="newRocker.FirstName" name="FirstName"/>
+<input [(ngModel)]="newRocker.firstName" name="FirstName"/>
 Last Name
 <input name="LastName" />
-<button [(ngModel)]="newRocker.FirstName" (click)="save()"></button>
+<button (click)="save()"></button>

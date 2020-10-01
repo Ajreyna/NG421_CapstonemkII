@@ -10,32 +10,23 @@ using Microsoft.Extensions.Logging;
 
 namespace capstone.Controllers
 {
-    [Authorize]
     [ApiController]
     [Route("[controller]")]
     public class RockerController : ControllerBase
     {
-        private readonly ILogger<RockerController> _logger;
+        private ApplicationDbContext _context;
 
-        public RockerController(ILogger<RockerController> logger)
+        public RockerController(ApplicationDbContext context)
         {
-            _logger = logger;
+            _context = context;
         }
 
         [HttpGet]
         public IEnumerable<Rocker> Get()
         {
             Rocker[] rockers = null;
-            using (var context = new ApplicationDbContext())
-            {
-                rockers = context.Rockers.ToArray();
-            }
+            rockers = _context.Rockers.ToArray();
             return rockers;
         }
-
-            
-
-        
-        
     }
 }
