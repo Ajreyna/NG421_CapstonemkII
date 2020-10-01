@@ -22,6 +22,16 @@
 </table>
 First Name
 <input [(ngModel)]="newRocker.firstName" name="FirstName"/>
+<p></p>
 Last Name
-<input name="LastName" />
+<input [(ngModel)]="newRocker.lastName" name="LastName"/>
+<p></p>
+Instrument
+<input [(ngModel)]="newRocker.instrument" name="Instrument"/>
+Is Alive
+<input
+  type="checkbox"
+  [(ngModel)]="newRocker.isAlive"
+  [ngModelOptions]="{standalone: true}"/> 
+
 <button (click)="save()"></button>
